@@ -42,9 +42,9 @@ class ModalController implements ScreenStackContainer, Modal.OnModalDismissedLis
         stack.add(modal);
     }
 
-    void dismissTopModal() {
+    void dismissTopModal(ScreenParams params) {
         if (isShowing()) {
-            stack.pop().dismiss();
+            stack.pop().dismiss(params);
         }
         if (stack.empty()) {
             activity.setRequestedOrientation(AppStyle.appStyle.orientation.orientationCode);
@@ -190,5 +190,9 @@ class ModalController implements ScreenStackContainer, Modal.OnModalDismissedLis
         for (Modal modal : stack) {
             modal.selectTopTabByScreen(screenInstanceId);
         }
+    }
+
+    String getCurrentlyVisibleScreenId() {
+        return stack.peek().getCurrentlyVisibleScreenId();
     }
 }

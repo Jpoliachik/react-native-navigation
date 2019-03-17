@@ -29,6 +29,7 @@
 	self.testID = [TextParser parse:dict key:@"testID"];
 	self.barStyle = [TextParser parse:dict key:@"barStyle"];
 	self.searchBarPlaceholder = [TextParser parse:dict key:@"searchBarPlaceholder"];
+    self.searchBarStyle = [TextParser parse:dict key:@"searchBarStyle"];
 	self.largeTitle = [[RNNLargeTitleOptions alloc] initWithDict:dict[@"largeTitle"]];
 	self.title = [[RNNTitleOptions alloc] initWithDict:dict[@"title"]];
 	self.subtitle = [[RNNSubtitleOptions alloc] initWithDict:dict[@"subtitle"]];
